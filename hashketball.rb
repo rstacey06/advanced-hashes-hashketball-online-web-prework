@@ -118,17 +118,17 @@ def game_hash
 end
 
 def shoe_size(name)
-  player = find_the_player(name)
+  player = find_player(name)
   player.fetch(:shoe)
 end
 
 def num_points_scored(name)
-  player = find_the_player(name)
+  player = find_player(name)
   player.fetch(:points)
 end
 
 def team_colors(team_name)
-  team = find_the_team(team_name)
+  team = find_team(team_name)
   team.fetch(:colors)
 end
 
@@ -136,16 +136,16 @@ def teams
   game_hash.values
 end
 
-def find_the_team(team_name)
+def find_team(team_name)
   teams.find {|team| team.fetch(:team_name) == team_name}
 end
 
 def big_shoe_rebounds
-  player = player_biggest_shoe_size
+  player = biggest_shoe
   player.fetch(:rebounds)
 end
 
-def player_biggest_shoe_size
+def biggest_shoe
   players.sort_by {|player| player.fetch(:shoe) }.last
 end
 
@@ -162,15 +162,15 @@ def team_names
 end
 
 def player_numbers(team_name)
-  find_the_team(team_name)[:players].map do |player|
+  find_team(team_name)[:players].map do |player|
     player[:number]
   end
 end
 
 def player_stats(player_name)
-  find_the_player(player_name).reject { |key, value| key == :player_name }
+  find_player(player_name).reject { |key, value| key == :player_name }
 end
 
-def find_the_player(name)
+def find_player(name)
   players.find {|player| player.fetch(:player_name) == name}
 end
