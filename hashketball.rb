@@ -122,6 +122,11 @@ def shoe_size(name)
   player.fetch(:shoe)
 end
 
+def num_points_scored(name)
+  player = find_the_player(name)
+  player.fetch(:points)
+end
+
 def team_colors(team_name)
   team = find_team(team_name)
   team.fetch(:colors)
