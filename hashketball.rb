@@ -13,10 +13,7 @@ def game_hash
        steals: 3,
        blocks: 1,
        dunks: 1,
-      },
-      {
-    
-  }
+      }
 
 
 
