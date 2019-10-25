@@ -174,3 +174,4 @@ end
 def find_player(name)
   players.find {|player| player.fetch(:player_name) == name}
 end
+
