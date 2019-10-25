@@ -119,7 +119,7 @@ end
 
 def shoe_size(name)
   player = find_player(name)
-  
+  player.fetch
   
       
 
