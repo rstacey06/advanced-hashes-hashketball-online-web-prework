@@ -118,7 +118,8 @@ def game_hash
 end
 
 def shoe_size(name)
-  player = find_player
+  player = find_player(name)
+  
   
       
 
